@@ -15,7 +15,6 @@ const newGeneration = function (board) {
             let noOfAlives = findNeighboursState(rowNo, columnNo, board);
             return nextStateOfCell(noOfAlives, stateOfElement);
         }));
-    console.log(newBoard);
     return newBoard;
 }
 
@@ -64,7 +63,6 @@ class Game extends React.Component {
 
     handleClick(e) {
         const [rowId, colId] = e.target.id.split("_");
-        console.log(rowId,colId);
         const board = this.state.board.slice();
         board[rowId][colId] = 1 - board[rowId][colId];
 
@@ -79,9 +77,13 @@ class Game extends React.Component {
         },100)
     }
 
-    stop(){
+    stopInterval(){
         this.isStarted= false;
         clearInterval(this.timerId);
+    }
+
+    stop(){
+        this.stopInterval();
         this.setState(state => state);
     }
 
@@ -91,9 +93,16 @@ class Game extends React.Component {
             board:generateBoard(10,10)
         })
     }
+
+    canClickOnBoard(){
+        return this.state.board.every(row => row.every(col => col === 0));
+    }
+
     render() {
         let onclick = null;
-        if (!this.isStarted) {
+        let canClick = this.canClickOnBoard();
+        if (!this.isStarted || canClick) {
+            this.stopInterval();
             onclick = this.handleClick.bind(this);
         }
         return (
