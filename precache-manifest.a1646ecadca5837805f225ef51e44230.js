@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "9b3a64ffaf3dbbc41a20",
+    "revision": "50f3d86c7952cdc6f710",
     "url": "/gol-react/static/css/main.661ed29c.chunk.css"
   },
   {
-    "revision": "9b3a64ffaf3dbbc41a20",
-    "url": "/gol-react/static/js/main.507c9ebd.chunk.js"
+    "revision": "50f3d86c7952cdc6f710",
+    "url": "/gol-react/static/js/main.f3dd6eb5.chunk.js"
   },
   {
     "revision": "d99d7a9e223364735716",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/gol-react/static/js/2.26ba37d3.chunk.js"
   },
   {
-    "revision": "be9e075b99dbcd565ff1b19311ef7982",
+    "revision": "7a0446ec458b2ed93262739750a019a9",
     "url": "/gol-react/index.html"
   }
 ];
