@@ -74,7 +74,7 @@ class Game extends React.Component {
         this.timerId = setInterval(() => {
         const board = newGeneration(this.state.board);
         this.setState({board})
-        },100)
+        },250)
     }
 
     stopInterval(){
